@@ -35,16 +35,25 @@
           </nav>
             <h1 class="header__title">Нове місце для свіжих ідей, конференцій та бізнес-зустрічей</h1>
             <h3 class="header__sub-title">Заміський конференц зал на діючій органічній фермі SokolovoFoodForest!</h3>
-            <a href="#"><svg class="header__arrow" style="fill:#ffffff;" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592"><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"></path></svg></a>
+            <a href="#about_hall"><svg class="header__arrow" style="fill:#ffffff;" x="0px" y="0px" width="38.417px" height="18.592px" viewBox="0 0 38.417 18.592"><path d="M19.208,18.592c-0.241,0-0.483-0.087-0.673-0.261L0.327,1.74c-0.408-0.372-0.438-1.004-0.066-1.413c0.372-0.409,1.004-0.439,1.413-0.066L19.208,16.24L36.743,0.261c0.411-0.372,1.042-0.342,1.413,0.066c0.372,0.408,0.343,1.041-0.065,1.413L19.881,18.332C19.691,18.505,19.449,18.592,19.208,18.592z"></path></svg></a>
         </div>
     </header>
     <main class="main">
-        <section class="about-hall container">
-            <p class="about-hall-text"><strong>Конференц-зал Sokolvo Food Forest</strong> - відмінне місце, якщо вам потрібно не далеко від офісу зустрітися з колегами, клієнтами або партнерами по бізнесу. Замість того, щоб боротися з пробками в центрі міста, наш конференц-зал пропонує тихі, відокремлені і зручні приміщення в красивій сільській місцевості. Наш зал ідеально підходить для зустрічей, тренінгів, семінарів, ретрітів, невеликих конференцій, виставок та інтерв'ю.</p>
+        <section class="about-hall container" id="about_hall">
+            <div class="about-hall-text">
+                <p><span style="font-weight: 700;">Конференц-зал Sokolovo Food Forest</span> - відмінне місце, якщо вам потрібно не далеко від офісу зустрітися з колегами, клієнтами або партнерами по бізнесу.</p>
+                <p>Замість того, щоб боротися з пробками в центрі міста, наш конференц-зал пропонує тихі, відокремлені і зручні приміщення в красивій сільській місцевості.</p> 
+                <p>Наш зал ідеально підходить для:</p>
+                <p>зустрічей,</p>
+                <p>тренінгів,</p>
+                <p>семінарів,</p>
+                <p>ретрітів,</p>
+                <p>невеликих конференцій, виставок та інтерв'ю.</p>
+            </div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/ayPYHFD1Xdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
         <section class="food-forest">
-            <div class="container">
+            <div class="container d-flex ">
                 <h2 class="food-forest-title">Sokolovo Food Forest</h2>
                 <p class="food-forest-text">Діюча сертифікована органічна ферма, яка розташована всього в 40 км від м. Дніпро в мальовничому і екологічно чистому місці.</p>
                 <div class="food-forest-wrapper">
@@ -144,6 +153,16 @@ navSlide();
 function lockScroll() {
     document.body.classList.toggle('lock-scroll');
 }
+
+const toTop = document.querySelector('.btn-up');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 400) {
+        toTop.classList.add('active');
+    } else {
+        toTop.classList.remove('active');
+    }
+})
 </script>
 </body>
 </html>

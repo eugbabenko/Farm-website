@@ -53,6 +53,10 @@ a {
     color: inherit;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     font-size: 18px;
@@ -109,12 +113,16 @@ body {
     max-width: 120px;
 }
 
+.link-logo {
+    padding: 0 79px;
+}
+
 
 nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 10vh;
+  min-height: 17vh;
 }
 
 
@@ -203,6 +211,10 @@ iframe {
     height: auto;
 }
 
+.d-flex {
+    display: block;
+}
+
 .food-forest {
     padding-top: 120px;
     padding-bottom: 135px;
@@ -216,7 +228,7 @@ iframe {
 }
 
 .food-forest-text {
-    max-width: 560px;
+    max-width: 60%;
     margin-bottom: 60px;
     font-size: 22px;
     line-height: 1.5;
@@ -246,6 +258,7 @@ iframe {
 }
 .item-text {
     line-height: 1.55;
+    font-size: 16px;
 }
 .flex-item-image {
     height: 366px;
@@ -349,7 +362,7 @@ iframe {
     background-color: #e4f7e4;
     width: 400px;
     bottom: 140px;
-    right: 200px;
+    right: 120px;
     padding: 60px;
     z-index: 999;
 }
@@ -411,15 +424,37 @@ iframe {
 
 .btn-up {
     position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .10s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-up.active {
     z-index: 999;
     bottom: 15px;
     left: 15px;
+    pointer-events: auto;
+    opacity: 1;
 }
 
 .lock-scroll {
     overflow: hidden;
 }
 
+
+@media screen and (max-width: 1155px){
+.link-logo {
+    padding: 0 40px;
+    }
+
+
+}
+@media screen and (max-width: 1070px){
+    .nav-link a {
+        font-size: 12px;
+    }
+}
 
 @media screen and (max-width:1024px){
     body{
@@ -452,6 +487,7 @@ iframe {
       top: 15px;
       z-index: 99;
     }
+
   }
   
   .nav-active{
@@ -486,6 +522,7 @@ iframe {
 @media only screen and (max-width: 960px){
     .food-forest-wrapper {
         flex-direction: column;
+        width: 70%;
     }
 }
 
@@ -494,7 +531,14 @@ iframe {
     .link-logo {
         position: absolute;
         display: none;
-      }
+    }
+
+    .d-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
       
     .about-hall {
         display: block;
@@ -503,10 +547,20 @@ iframe {
 
     .about-hall-text{
         padding-bottom: 20px;
+        text-align: left;
+        font-size: 16px;
     }
 
     iframe {
         width: 50%;
+    }
+
+    .bg-2 {
+        order: -1;
+    }
+
+    .bg-3 {
+        order: 1;
     }
 
     .grid-container {
@@ -583,12 +637,23 @@ iframe {
     }
 
     .food-forest-text{
+        max-width: 90%;
         font-size: 18px;
     }
 
-    .item-text {
-        font-size: 16px;
+    .wrapper-flex-item {
+        flex-direction: column;
     }
+
+    .flex-item-image {
+        flex: none;
+        order: 1;
+    }
+
+    .item-text {
+        font-size: 14px;
+    }
+
 
     .about-photo-text {
         font-size: 26px;
@@ -606,13 +671,6 @@ iframe {
 
 @media only screen and (max-width: 430px) {
 
-.wrapper-flex-item {
-    flex-direction: column;
-}
-
-.flex-item-image {
-    flex: none;
-}
 
 .about-photo-text {
     font-size: 18px;
